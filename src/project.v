@@ -21,10 +21,10 @@ module tt_um_magic_challenge (
     (
         .VNB(VGND),
         .VPB(VPWR),
-        .VPWR(VPRW),
+        .VPWR(VPWR),
         .VGND(VGND),
-        .B(ui_in[0]),
-        .A(ui_in[1]),
+        .A(ui_in[0]),
+        .B(ui_in[1]),
         .Y(uo_out[0])
     );
 endmodule
