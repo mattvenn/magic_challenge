@@ -1,6 +1,6 @@
 # Setup
 
-Make sure $PDK_ROOT is setup and magicrc symlink is correct:
+Make sure $PDK_ROOT, $PDK env vars are setup and magicrc symlink is correct:
 
     ln -s $PDK_ROOT/sky130A/libs.tech/magic/sky130A.magicrc 
 
@@ -29,3 +29,5 @@ This sets up a .mag file ready to start working. It includes all the pins for Ti
 # Run LVS
 
 Requires a
+
+    make lvs

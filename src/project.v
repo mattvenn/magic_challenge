@@ -16,4 +16,15 @@ module tt_um_magic_challenge (
     input  wire       rst_n
 );
 
+    
+    sky130_fd_io__nand2_1 sky130_fd_io__nand2_1 
+    (
+        .VNB(VGND),
+        .VPB(VPWR),
+        .VPWR(VPRW),
+        .VGND(VGND),
+        .B(ui_in[0]),
+        .A(ui_in[1]),
+        .Y(uo_out[0])
+    );
 endmodule

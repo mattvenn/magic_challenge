@@ -11,7 +11,7 @@ tt_block_1x2_pg_ana.def:
 $(PROJECT_NAME).mag: tt_block_1x2_pg_ana.def
 	magic -rcfile sky130A.magicrc -noconsole -dnull tcl/tt-analog-draw.tcl
 
-$(PROJECT_NAME).lvs.spice:
+$(PROJECT_NAME).lvs.spice: $(PROJECT_NAME).mag
 	magic -noconsole -dnull tcl/extract_forlvs.tcl
 	rm -f *.ext
 
