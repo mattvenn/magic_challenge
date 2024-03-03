@@ -15,6 +15,9 @@ $(PROJECT_NAME).lvs.spice: $(PROJECT_NAME).mag
 	magic -noconsole -dnull tcl/extract_forlvs.tcl
 	rm -f *.ext
 
+drc:
+	magic -noconsole -dnull tcl/drc.tcl
+	
 extract_sim:
 	magic -noconsole -dnull tcl/extract_forsim.tcl
 	rm -f *.ext
@@ -23,7 +26,7 @@ extractr2r_sim:
 	magic -noconsole -dnull tcl/extract_r2r_forsim.tcl
 	rm -f *.ext
 
-lvs.report: $(PROJECT_NAME).lvs.spice
+lvs.report: $(PROJECT_NAME).lvs.spice ../src/project.v
 	netgen -batch source tcl/lvs_netgen.tcl
 
 lvs: lvs.report
