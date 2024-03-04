@@ -1,4 +1,3 @@
-set project $::env(PROJECT_NAME)
 set layout [readnet spice $project.lvs.spice]
 set source [readnet spice /dev/null]
 readnet spice $::env(PDK_ROOT)/$::env(PDK)/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice $source

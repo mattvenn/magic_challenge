@@ -25,8 +25,7 @@ extract_sim:
 	rm -f *.ext
 
 lvs.report: $(PROJECT_NAME).lvs.spice ../src/project.v
-	export PROJECT_NAME=$(PROJECT_NAME)
-	netgen -batch source tcl/lvs_netgen.tcl
+	netgen -batch eval "set project $(PROJECT_NAME) ; source tcl/lvs_netgen.tcl"
 
 lvs: lvs.report
 	@propOk=1; match=0; \
