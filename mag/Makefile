@@ -11,21 +11,17 @@ tt_block_1x2_pg_ana.def:
 	wget https://raw.githubusercontent.com/TinyTapeout/tt-support-tools/tt06/def/analog/tt_block_1x2_pg_ana.def
 
 $(PROJECT_NAME).mag: tt_block_1x2_pg_ana.def
-	export PROJECT_NAME=$(PROJECT_NAME)
-	magic -rcfile $(MAGIC_RC) -noconsole -dnull tcl/tt-analog-draw.tcl
+	magic -rcfile $(MAGIC_RC) -noconsole -dnull tcl/tt-analog-draw.tcl $(PROJECT_NAME)
 
 $(PROJECT_NAME).lvs.spice: $(PROJECT_NAME).mag
-	export PROJECT_NAME=$(PROJECT_NAME)
-	magic -noconsole -dnull tcl/extract_for_lvs.tcl
+	magic -noconsole -dnull tcl/extract_for_lvs.tcl $(PROJECT_NAME)
 	rm -f *.ext
 
 drc:
-	export PROJECT_NAME=$(PROJECT_NAME)
-	magic -noconsole -dnull tcl/drc.tcl
+	magic -noconsole -dnull tcl/drc.tcl $(PROJECT_NAME)
 	
 extract_sim:
-	export PROJECT_NAME=$(PROJECT_NAME)
-	magic -noconsole -dnull tcl/extract_for_sim.tcl
+	magic -noconsole -dnull tcl/extract_for_sim.tcl $(PROJECT_NAME)
 	rm -f *.ext
 
 lvs.report: $(PROJECT_NAME).lvs.spice ../src/project.v
@@ -54,8 +50,7 @@ lvs: lvs.report
 
 update_gds:
 	mkdir -p ../gds ../lef
-	export PROJECT_NAME=$(PROJECT_NAME)
-	magic -noconsole -dnull tcl/update_gds_lef.tcl
+	magic -noconsole -dnull tcl/update_gds_lef.tcl $(PROJECT_NAME)
 
 clean:
 	rm -f lvs.report $(PROJECT_NAME).lvs.spice

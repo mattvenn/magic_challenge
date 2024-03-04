@@ -1,8 +1,9 @@
 # Important: before running this script, download the the .def file from
 # https://github.com/TinyTapeout/tt-support-tools/blob/tt06/def/analog/tt_block_1x2_pg_ana.def
+set project [lindex $argv $argc-1]
 
 def read tt_block_1x2_pg_ana.def
-cellname rename tt_um_template $::env(PROJECT_NAME)
+cellname rename tt_um_template $project
 
 # VPWR
 box 100 500 250 22076

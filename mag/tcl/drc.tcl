@@ -1,4 +1,5 @@
-load $::env(PROJECT_NAME).mag
+set project [lindex $argv $argc-1]
+load $project.mag
 select top cell
 drc euclidean on
 drc style drc(full)

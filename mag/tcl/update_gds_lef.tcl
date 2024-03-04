@@ -1,5 +1,5 @@
-# Export
-load $::env(PROJECT_NAME).mag
-gds write ../gds/$::env(PROJECT_NAME).gds
-lef write ../lef/$::env(PROJECT_NAME).lef -pinonly
+set project [lindex $argv $argc-1]
+load $project
+gds write ../gds/$project.gds
+lef write ../lef/$$project.lef -pinonly
 quit -noprompt
