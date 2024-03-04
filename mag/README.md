@@ -1,18 +1,15 @@
 # Setup
 
-Make sure $PDK_ROOT, $PDK env vars are setup and magicrc symlink is correct:
+Make sure the $PDK_ROOT & $PDK environment variables are setup.
 
-    ln -s $PDK_ROOT/sky130A/libs.tech/magic/sky130A.magicrc 
+# Update files for your project name
 
-# Change Makefiles
-
-* update Makefiles to set your project name
-* update all the tcl scripts in ./mag/tcl to the name of your project
+* update Makefiles to set your project name at the top of the file
 * update src/project.v to match your project name
 
 # Initialise the project
 
-Substitute for your name and run:
+Substitute `<your project name>` for your name and run:
 
     make <your project name>.mag
 
@@ -28,6 +25,8 @@ This sets up a .mag file ready to start working. It includes all the pins for Ti
 
 # Run LVS
 
-Requires a
-
     make lvs
+
+# Run DRC
+
+    make drc

@@ -1,32 +1,35 @@
 PROJECT_NAME := tt_um_magic_challenge
+MAGIC_RC := $(PDK_ROOT)/sky130A/libs.tech/magic/sky130A.magicrc
+
 .PHONY: lvs magic
 
 magic:
-	magic -rcfile sky130A.magicrc $(PROJECT_NAME).mag
+	magic -rcfile $(MAGIC_RC) $(PROJECT_NAME).mag
 
 tt_block_1x2_pg_ana.def:
 	# https://github.com/TinyTapeout/tt-support-tools/blob/tt06/def/analog/tt_block_1x2_pg_ana.def
 	wget https://raw.githubusercontent.com/TinyTapeout/tt-support-tools/tt06/def/analog/tt_block_1x2_pg_ana.def
 
 $(PROJECT_NAME).mag: tt_block_1x2_pg_ana.def
-	magic -rcfile sky130A.magicrc -noconsole -dnull tcl/tt-analog-draw.tcl
+	export PROJECT_NAME=$(PROJECT_NAME)
+	magic -rcfile $(MAGIC_RC) -noconsole -dnull tcl/tt-analog-draw.tcl
 
 $(PROJECT_NAME).lvs.spice: $(PROJECT_NAME).mag
-	magic -noconsole -dnull tcl/extract_forlvs.tcl
+	export PROJECT_NAME=$(PROJECT_NAME)
+	magic -noconsole -dnull tcl/extract_for_lvs.tcl
 	rm -f *.ext
 
 drc:
+	export PROJECT_NAME=$(PROJECT_NAME)
 	magic -noconsole -dnull tcl/drc.tcl
 	
 extract_sim:
-	magic -noconsole -dnull tcl/extract_forsim.tcl
-	rm -f *.ext
-
-extractr2r_sim:
-	magic -noconsole -dnull tcl/extract_r2r_forsim.tcl
+	export PROJECT_NAME=$(PROJECT_NAME)
+	magic -noconsole -dnull tcl/extract_for_sim.tcl
 	rm -f *.ext
 
 lvs.report: $(PROJECT_NAME).lvs.spice ../src/project.v
+	export PROJECT_NAME=$(PROJECT_NAME)
 	netgen -batch source tcl/lvs_netgen.tcl
 
 lvs: lvs.report
@@ -51,6 +54,7 @@ lvs: lvs.report
 
 update_gds:
 	mkdir -p ../gds ../lef
+	export PROJECT_NAME=$(PROJECT_NAME)
 	magic -noconsole -dnull tcl/update_gds_lef.tcl
 
 clean:

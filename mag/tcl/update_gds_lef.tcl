@@ -1,5 +1,5 @@
 # Export
-load tt_um_magic_challenge.mag
-gds write ../gds/tt_um_magic_challenge.gds
-lef write ../lef/tt_um_magic_challenge.lef -pinonly
+load $::env(PROJECT_NAME).mag
+gds write ../gds/$::env(PROJECT_NAME).gds
+lef write ../lef/$::env(PROJECT_NAME).lef -pinonly
 quit -noprompt

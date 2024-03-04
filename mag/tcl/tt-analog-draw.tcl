@@ -2,7 +2,7 @@
 # https://github.com/TinyTapeout/tt-support-tools/blob/tt06/def/analog/tt_block_1x2_pg_ana.def
 
 def read tt_block_1x2_pg_ana.def
-cellname rename tt_um_template tt_um_magic_challenge
+cellname rename tt_um_template $::env(PROJECT_NAME)
 
 # VPWR
 box 100 500 250 22076
