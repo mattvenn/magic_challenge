@@ -28,7 +28,7 @@ lvs.report: $(PROJECT_NAME).lvs.spice ../src/project.v
 	netgen -batch eval "set project $(PROJECT_NAME) ; source tcl/lvs_netgen.tcl"
 
 lvs: lvs.report
-	@propOk=1; match=0; \
+	@propOk=1; match=0; port=1; \
     if grep -q "match uniquely" lvs.report; then \
         match=1; \
     fi; \
@@ -38,13 +38,21 @@ lvs: lvs.report
     if grep -q "Final result: Netlists do not match" lvs.report; then \
         match=0; \
     fi; \
-    if grep -q "Final result: Circuits match uniquely" lvs.report; then \
+    if grep -q "Final result: Netlists do not match" lvs.report; then \
+        match=0; \
+    fi; \
+    if grep -q "port errors" lvs.report; then \
+        port=0; \
+    fi; \
+    if grep -q "Final result: Circuits match uniquely\." lvs.report; then \
         match=1; \
     fi; \
-	if [ $$match -eq 1 ] && [ $$propOk -eq 1 ]; then \
+	if [ $$match -eq 1 ] && [ $$propOk -eq 1 ] && [ $$port -eq 1 ]; then \
         echo "LVS OK"; \
+	    exit 0; \
     else \
-        echo "LVS FAIL: match $$match properties $$propOk"; \
+        echo "LVS FAIL: match=$$match properties=$$propOk port=$$port"; \
+	    exit 1; \
     fi
 
 update_gds:
