@@ -1,7 +1,7 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1710074111
+timestamp 1710086986
 << nwell >>
 rect 22652 41330 23802 41608
 << psubdiff >>
@@ -301,10 +301,10 @@ use sky130_fd_io__nand2_1  sky130_fd_io__nand2_1_0 $PDKPATH/libs.ref/sky130_fd_i
 timestamp 1676037725
 transform 1 0 23498 0 1 40983
 box -38 -49 326 715
-use cells/sky130_fd_pr__res_generic_po_CZ5NN7  sky130_fd_pr__res_generic_po_CZ5NN7_0
-timestamp 1710074111
-transform 1 0 27848 0 1 3035
-box -199 -1596 199 1596
+use sky130_fd_pr__res_high_po_0p35_SKZWQ5  sky130_fd_pr__res_high_po_0p35_SKZWQ5_0
+timestamp 1710086986
+transform 1 0 27797 0 1 2984
+box -201 -1598 201 1598
 use sky130_fd_sc_hd__tapvpwrvgnd_1  sky130_fd_sc_hd__tapvpwrvgnd_1_0 $PDKPATH/libs.ref/sky130_fd_sc_hd/mag
 timestamp 1685868990
 transform 1 0 22672 0 1 41042
