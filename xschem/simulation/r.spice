@@ -1,0 +1,6 @@
+** sch_path: /home/matt/work/asic-workshop/shuttle-2404/magic-challenge/xschem/r.sch
+.subckt r VSUBS A B
+*.PININFO VSUBS:B A:B B:B
+XR1 B A VSUBS sky130_fd_pr__res_high_po_0p35 L=100 mult=1 m=1
+.ends
+.end
