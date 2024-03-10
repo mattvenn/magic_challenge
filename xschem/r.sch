@@ -6,7 +6,7 @@ V {}
 S {}
 E {}
 C {sky130_fd_pr/res_high_po_0p35.sym} 0 0 0 0 {name=R1
-L=100
+L=10
 model=res_high_po_0p35
 spiceprefix=X
 mult=1}

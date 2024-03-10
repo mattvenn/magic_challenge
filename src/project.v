@@ -28,10 +28,11 @@ module tt_um_magic_challenge (
     );
 
 //    sky130_fd_pr__res_generic_po_CZ5NN7 a_n33_1000# a_n33_n1430#
-    sky130_fd_pr__res_generic_po sky130_fd_pr__res_generic_po
+    r r
     (
         .A(ua[0]),
         .B(ua[1]),
+        .VSUBS(VGND)
     );
 
 endmodule
