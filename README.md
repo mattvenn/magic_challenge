@@ -2,13 +2,15 @@
 
 # Magic Challenge!
 
-Here's the schematic: https://xschem-viewer.com/?file=https://github.com/mattvenn/magic_challenge/blob/main/xschem/challenge.sch 
+Jump the wires and drop local vias! Become a Silicon Wizard with Magic!
 
-Here's the initial layout:
+How fast can you wire up these cells:
 
 ![layout](docs/init_layout.png)
 
-How fast can you layout and get clean DRC & LVS? 
+To match this [schematic](https://xschem-viewer.com/?file=https://github.com/mattvenn/magic_challenge/blob/main/xschem/challenge.sch)?
+
+Your design must have clean LVS and DRC to qualify!
 
 # Leaderboard
 
