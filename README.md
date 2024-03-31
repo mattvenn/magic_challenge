@@ -1,8 +1,22 @@
 ![](../../workflows/gds/badge.svg) ![](../../workflows/docs/badge.svg) ![](../../workflows/lvs/badge.svg)
 
-# Tiny Tapeout Analog Project Template
+# Magic Challenge!
 
-- [Read the documentation for project](docs/info.md)
+Here's the schematic: https://xschem-viewer.com/?file=https://github.com/mattvenn/magic_challenge/blob/main/xschem/challenge.sch 
+
+Here's the initial layout:
+
+![layout](docs/init_layout.png)
+
+How fast can you layout and get clean DRC & LVS? 
+
+# Leaderboard
+
+* [04:20 Matt Venn](https://youtu.be/aKv0HFeVWOM)
+
+# Want to learn how to turn a schematic into silicon?
+
+[Sign up to the Zero to ASIC analog course waitlist](https://docs.google.com/forms/d/e/1FAIpQLScXN6zhH9dkISgsvGsgHH53k_zN3EdOgxQc8JHPTwpHUUbPaQ/viewform)
 
 ## What is Tiny Tapeout?
 
