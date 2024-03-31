@@ -16,23 +16,12 @@ module tt_um_magic_challenge (
     input  wire       rst_n     // reset_n - low to reset
 );
     
-    sky130_fd_io__nand2_1 sky130_fd_io__nand2_1 
+    challenge challenge
     (
-        .VNB(VGND),
-        .VPB(VPWR),
-        .VPWR(VPWR),
-        .VGND(VGND),
-        .A(ui_in[0]),
-        .B(ui_in[1]),
-        .Y(uo_out[0])
-    );
-
-//    sky130_fd_pr__res_generic_po_CZ5NN7 a_n33_1000# a_n33_n1430#
-    r r
-    (
-        .A(ua[0]),
-        .B(ua[1]),
-        .VSUBS(VGND)
+        .VSS(VGND),
+        .VDD(VPWR),
+        .in(ua[0]),
+        .out(ua[1])
     );
 
 endmodule
