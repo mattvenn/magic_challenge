@@ -1,9 +1,9 @@
 ** sch_path: /home/matt/work/asic-workshop/shuttle-2404/magic-challenge/xschem/challenge.sch
 .subckt challenge out VDD VSS in
 *.PININFO out:B VDD:B VSS:B in:B
-XR1 net1 in VSS sky130_fd_pr__res_high_po_0p35 L=60 mult=1 m=1
-XC1 net1 net2 sky130_fd_pr__cap_mim_m3_1 W=20 L=20 m=1
-XM1 out net2 VSS VSS sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 m=1
-XM2 out net2 VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 m=1
+XR1 tocap in VSS sky130_fd_pr__res_high_po_0p35 L=60 mult=1 m=1
+XC1 tocap gate sky130_fd_pr__cap_mim_m3_1 W=20 L=20 m=1
+XM1 out gate VSS VSS sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 m=1
+XM2 out gate VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 m=1
 .ends
 .end

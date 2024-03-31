@@ -14,15 +14,15 @@ lab=VSS}
 N -80 -0 -20 -0 {
 lab=VSS}
 N 0 30 0 110 {
-lab=#net1}
+lab=VSS}
 N -0 170 -0 200 {
-lab=#net2}
+lab=#net1}
 N -80 200 -0 200 {
-lab=#net2}
+lab=#net1}
 N -80 200 -80 280 {
-lab=#net2}
+lab=#net1}
 N -80 280 -40 280 {
-lab=#net2}
+lab=#net1}
 N 0 250 80 250 {
 lab=VDD}
 N 80 250 80 280 {
@@ -30,9 +30,9 @@ lab=VDD}
 N -0 310 -0 350 {
 lab=out}
 N -70 350 -70 430 {
-lab=#net2}
+lab=#net1}
 N -70 430 -40 430 {
-lab=#net2}
+lab=#net1}
 N -0 460 90 460 {
 lab=VSS}
 N 90 430 90 460 {
@@ -42,9 +42,11 @@ lab=out}
 N 0 380 160 380 {
 lab=out}
 N -70 280 -70 350 {
-lab=#net2}
+lab=#net1}
 N 0 350 0 380 {
 lab=out}
+N -20 90 0 90 {
+lab=VSS}
 C {sky130_fd_pr/res_high_po_0p35.sym} 0 0 0 0 {name=R1
 L=60
 model=res_high_po_0p35
@@ -87,4 +89,8 @@ C {devices/lab_pin.sym} 90 280 2 0 {name=p7 sig_type=std_logic lab=VDD}
 C {devices/lab_pin.sym} 90 430 2 0 {name=p8 sig_type=std_logic lab=VSS
 }
 C {devices/lab_pin.sym} -80 0 0 0 {name=p1 sig_type=std_logic lab=VSS
+}
+C {devices/lab_pin.sym} -20 90 0 0 {name=p3 sig_type=std_logic lab=tocap
+}
+C {devices/lab_pin.sym} -80 280 0 0 {name=p9 sig_type=std_logic lab=gate
 }
