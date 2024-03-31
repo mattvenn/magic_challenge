@@ -1,4 +1,4 @@
-PROJECT_NAME := tt_um_magic_challenge
+PROJECT_NAME ?= tt_um_magic_challenge
 MAGIC_RC := $(PDK_ROOT)/sky130A/libs.tech/magic/sky130A.magicrc
 
 .PHONY: lvs magic start
@@ -20,7 +20,7 @@ $(PROJECT_NAME).lvs.spice: $(PROJECT_NAME).mag
 drc:
 	magic -noconsole -dnull tcl/drc.tcl $(PROJECT_NAME)
 	
-extract_sim:
+$(PROJECT_NAME).sim.spice: $(PROJECT_NAME).mag
 	magic -noconsole -dnull tcl/extract_for_sim.tcl $(PROJECT_NAME)
 	rm -f *.ext
 
@@ -32,10 +32,10 @@ lvs: lvs.report
     if grep -q "match uniquely" lvs.report; then \
         match=1; \
     fi; \
-    if grep -q "Property errors were found" lvs.report || grep -q "failed pin matching" lvs.report; then \
+    if grep -q "Property errors were found" lvs.report; then \
         propOk=0; \
     fi; \
-    if grep -q "Final result: Netlists do not match" lvs.report; then \
+    if grep -q "failed pin matching" lvs.report; then \
         match=0; \
     fi; \
     if grep -q "Final result: Netlists do not match" lvs.report; then \
@@ -60,4 +60,4 @@ update_gds:
 	magic -noconsole -dnull tcl/update_gds_lef.tcl $(PROJECT_NAME)
 
 clean:
-	rm -f lvs.report $(PROJECT_NAME).lvs.spice
+	rm -f lvs.report *.lvs.spice *.nodes
