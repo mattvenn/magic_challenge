@@ -17,6 +17,10 @@ $(PROJECT_NAME).lvs.spice: $(PROJECT_NAME).mag
 	magic -noconsole -dnull tcl/extract_for_lvs.tcl $(PROJECT_NAME)
 	rm -f *.ext
 
+antenna:
+	magic -noconsole -dnull tcl/antenna.tcl $(PROJECT_NAME)
+	rm -f *.ext
+
 drc:
 	magic -noconsole -dnull tcl/drc.tcl $(PROJECT_NAME)
 	
