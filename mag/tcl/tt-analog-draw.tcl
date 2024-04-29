@@ -8,7 +8,7 @@ cellname rename tt_um_template $project
 # VPWR
 box 100 500 250 22076
 paint met4
-label VPWR FreeSans met4
+label VPWR FreeSans 300 0 0 0 n met4
 port VPWR make n
 port VPWR use power
 port VPWR class bidirectional
@@ -17,7 +17,7 @@ port conn n s e w
 # VGND
 box 4900 500 5050 22076
 paint met4
-label VGND FreeSans met4
+label VGND FreeSans 300 0 0 0 n met4
 port VGND make n
 port VGND use ground
 port VGND class bidirectional
