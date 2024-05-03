@@ -8,7 +8,7 @@ magic:
 
 tt_block_1x2_pg_ana.def:
 	# https://github.com/TinyTapeout/tt-support-tools/blob/tt06/def/analog/tt_block_1x2_pg_ana.def
-	wget https://raw.githubusercontent.com/TinyTapeout/tt-support-tools/tt06/def/analog/tt_block_1x2_pg_ana.def
+	wget https://raw.githubusercontent.com/TinyTapeout/tt-support-tools/tt07/def/analog/tt_block_1x2_pg_ana.def
 
 start: tt_block_1x2_pg_ana.def
 	magic -rcfile $(MAGIC_RC) -noconsole -dnull tcl/tt-analog-draw.tcl $(PROJECT_NAME)
