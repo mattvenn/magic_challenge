@@ -36,7 +36,7 @@ proc draw_power_stripe {name x} {
     box $x 5um $x 220.76um
     box width $POWER_STRIPE_WIDTH
     paint met4
-    label $name FreeSans 0.25u -met4
+    label $name FreeSans 1u -met4
     port make
     port use [expr {$name eq "VGND" ? "ground" : "power"}]
     port class bidirectional
