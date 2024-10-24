@@ -14,6 +14,7 @@ Your design must have clean LVS and DRC to qualify!
 
 # Leaderboard
 
+* [03:55 Renaldas 'ReJ' Zioma](https://www.youtube.com/watch?v=qB_n0rUnuWM)
 * [04:20 Matt Venn](https://youtu.be/aKv0HFeVWOM)
 
 # Want to learn how to turn a schematic into silicon?
